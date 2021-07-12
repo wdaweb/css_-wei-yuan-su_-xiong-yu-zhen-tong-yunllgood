@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2021職訓作業 CSS_偽元素_針筒</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      font-family: 'Noto Sans TC', 'Micrsoft JhenHei', sans-serif;
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      height: 100%;
+    }
+
+    .container {
+      width: 400px;
+      height: 400px;
+      background: #000;
+      border-radius: 50%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .ear::before {
+      width: 30px;
+      height: 30px;
+      background: white;
+      border: 15px solid black;
+      border-radius: 50%;
+      position: absolute;
+      top: 10px;
+      left: 30px;
+      content: '';
+    }
+
+    .ear::after {
+      width: 30px;
+      height: 30px;
+      background: white;
+      border: 15px solid black;
+      border-radius: 50%;
+      position: absolute;
+      top: 10px;
+      left: 310px;
+      content: '';
+    }
+
+    .eye::before {
+      width: 50px;
+      height: 50px;
+      background: black;
+      border: 15px solid white;
+      border-radius: 50%;
+      position: absolute;
+      top: 80px;
+      left: 80px;
+      content: '';
+    }
+
+    .eye::after {
+      width: 50px;
+      height: 50px;
+      background: black;
+      border: 15px solid white;
+      border-radius: 50%;
+      position: absolute;
+      top: 80px;
+      left: 240px;
+      content: '';
+    }
+
+    .nose {
+      width: 160px;
+      height: 110px;
+      background: white;
+      border-radius: 50%;
+      position: absolute;
+      top: 155px;
+      left: 120px;
+    }
+
+    .nose::before {
+      width: 40px;
+      height: 25px;
+      background: black;
+      border-radius: 50%;
+      position: absolute;
+      top: 10px;
+      left: 60px;
+      content: '';
+    }
+
+    .nose::after {
+      width: 100px;
+      height: 40px;
+      background: black;
+      border-radius: 50%;
+      position: absolute;
+      top: 50px;
+      left: 30px;
+      content: '';
+    }
+
+    .blush::before {
+      width: 100px;
+      height: 100px;
+      background: red;
+      border-radius: 50%;
+      position: absolute;
+      top: 150px;
+      left: -20px;
+      content: '';
+    }
+
+    .blush::after {
+      width: 100px;
+      height: 100px;
+      background: red;
+      border-radius: 50%;
+      position: absolute;
+      top: 150px;
+      left: 320px;
+      content: '';
+    }
+
+    .v::before {
+      width: 50px;
+      height: 50px;
+      background: #fff;
+      /* skew 傾斜角度 */
+      transform: skew(50deg, 0);
+      position: absolute;
+      top: 310px;
+      left: 145px;
+      content: '';
+    }
+
+    .v::after {
+      width: 50px;
+      height: 50px;
+      background: #fff;
+      transform: skew(-50deg, 0);
+      position: absolute;
+      top: 310px;
+      right: 145px;
+      content: '';
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="ear"></div>
+    <div class="eye"></div>
+    <div class="nose"></div>
+    <div class="blush"></div>
+    <div class="v"></div>
+  </div>
+</body>
+
+</html>

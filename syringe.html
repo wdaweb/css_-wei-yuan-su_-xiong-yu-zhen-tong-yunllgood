@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2021職訓作業 CSS_偽元素_針筒</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      font-family: 'Noto Sans TC', 'Micrsoft JhenHei', sans-serif;
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      height: 100%;
+    }
+
+    .container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    /* 從中間黑色開始 */
+    .black {
+      width: 45px;
+      height: 100px;
+      background: black;
+    }
+
+    .black::before {
+      width: 45px;
+      height: 100px;
+      background: linear-gradient(#fff 10%, #ddd 60%, #fff 100%);
+      border: 1px solid #999;
+      border-radius: 5px;
+      position: absolute;
+      left: -302px;
+      top: 0px;
+      content: '';
+    }
+
+    .black::after {
+      width: 100px;
+      height: 2px;
+      background: #999;
+      position: absolute;
+      right: -352px;
+      top: 50px;
+      content: '';
+    }
+
+    .left1 {
+      width: 200px;
+      height: 100px;
+      background: linear-gradient(#fff 10%, #ddd 60%, #fff 100%);
+      border: 1px solid #999;
+      position: absolute;
+      left: -200px;
+      top: 0px;
+    }
+
+    .left1::before {
+      width: 55px;
+      height: 70px;
+      background: linear-gradient(#fff 10%, #ddd 60%, #fff 100%);
+      border: 1px solid #999;
+      position: absolute;
+      left: -57px;
+      top: 15px;
+      content: '';
+    }
+
+    /* 刻度 */
+    .left1::after {
+      width: 185px;
+      height: 15px;
+      /* 用1px的線 重複 */
+      background-image: linear-gradient(90deg, #999 1px, transparent 0);
+      background-size: 15px 100%;
+      position: absolute;
+      left: 15px;
+      top: 0px;
+      content: '';
+    }
+
+    .right1 {
+      width: 200px;
+      height: 100px;
+      background: linear-gradient(#FAFFA1 10%, #CFD49F 60%, #FAFFA1 100%);
+      border: 1px solid #999;
+      position: absolute;
+      right: -200px;
+      top: 0px;
+    }
+
+    .right1::before {
+      width: 55px;
+      height: 70px;
+      background: linear-gradient(#fff 10%, #ddd 60%, #fff 100%);
+      border: 1px solid #999;
+      border-radius: 0 5px 5px 0;
+      position: absolute;
+      right: -57px;
+      top: 15px;
+      content: '';
+    }
+
+    /* 刻度 */
+    .right1::after {
+      width: 185px;
+      height: 15px;
+      background-image: linear-gradient(90deg, #999 1px, transparent 0);
+      background-size: 15px 100%;
+      position: absolute;
+      left: 2px;
+      top: 0px;
+      content: '';
+    }
+
+    .text {
+      color: gray;
+      position: absolute;
+      left: -195px;
+      top: 80px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="black"></div>
+    <div class="left1"></div>
+    <div class="right1"></div>
+    <div class="text">Made in Taiwan</div>
+  </div>
+
+</body>
+
+</html>
